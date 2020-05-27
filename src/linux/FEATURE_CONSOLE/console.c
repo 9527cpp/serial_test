@@ -112,6 +112,8 @@ static int run_command(char *cmd)
     if ((argc = parse_line(cmd, argv)) == 0) {
         return -1;
     }
+    printf("argv[0]:%s\r\n",argv[0]);
+    printf("argv[1]:%s\r\n",argv[1]);
     if ((cmdtp = find_cmd(argv[0])) == 0) {
         return -1;
     }
@@ -186,7 +188,6 @@ int handle_char(const char c, char *prompt) {
         case '\r':                /* Enter        */
         case '\n':
             *p = '\0';
-            console_puts("\r\n");
             return (p - console_buffer);
         case '\0':                /* nul            */
             return -1;
@@ -317,20 +318,29 @@ int do_test2(cmd_tbl_t * cmd,int argc,char *argv[])
 cmd_tbl_t cmd_list[] = {
     {
         "test1",1,do_test1,
-        "test1 --- just do test1"
+        "test1"
     },
     {
-        "test2",1,do_test2,
-        "test2 --- just do test2"
+        "test2",2,do_test2,
+        "test2,xxxxxxxxxx"
     },
 };
 
 int main(){
+
+    /* char *argv[CMD_MAXARGS + 1];    /1* NULL terminated    *1/ */
+    /* char test[32]; */ 
+    /* memcpy(test,"test1,aaa",strlen("test1,aaa")); */
+    /* parse_line(test,argv); */
+    /* printf("argv[0]:%s\r\n",argv[0]); */
+    /* printf("argv[1]:%s\r\n",argv[1]); */
+
     console_init();
     console_add_cmd(cmd_list,sizeof(cmd_list)/sizeof(cmd_tbl_t));
     while(1){
         sleep(1);
     }
+
     return 0;
 }
 
