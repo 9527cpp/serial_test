@@ -1,0 +1,80 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AR	Makefile	/^AR = $(COMPILIE_PREFIX)ar$/;"	m
+CC	Makefile	/^CC = $(COMPILIE_PREFIX)gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -Wall -g -I.$/;"	m
+CMD_CBSIZE	console.c	11;"	d	file:
+CMD_LIST_COUNT	console.c	13;"	d	file:
+CMD_MAXARGS	console.c	12;"	d	file:
+LDFLAGS	Makefile	/^LDFLAGS = -lrt -lpthread$/;"	m
+OBJS	Makefile	/^OBJS := ${patsubst %.c, %.o, $(SRCS)}$/;"	m
+RING_BUFF_SIZE	console.c	14;"	d	file:
+RxIrq	serial.h	/^    RxIrq = 0,$/;"	e	enum:__anon1
+TARGET	Makefile	/^TARGET := uart_rda$/;"	m
+TxIrq	serial.h	/^    TxIrq$/;"	e	enum:__anon1
+_CONSOLE_H	console.h	8;"	d
+_WZSERIALPORT_H	serial.h	3;"	d
+__FIFO_H__	fifo.h	2;"	d
+buffer	fifo.h	/^    unsigned char *buffer;  $/;"	m	struct:kfifo
+cmd	console.h	/^    int     (*cmd)(struct cmd_tbl_s *, int, char *[]);$/;"	m	struct:cmd_tbl_s
+cmd_cntr	console.c	/^static unsigned int cmd_cntr = 0;$/;"	v	file:
+cmd_list	console.c	/^cmd_tbl_t cmd_list[] = {$/;"	v
+cmd_tbl_s	console.h	/^typedef struct cmd_tbl_s {$/;"	s
+cmd_tbl_t	console.h	/^} cmd_tbl_t;$/;"	t	typeref:struct:cmd_tbl_s
+console_add_cmd	console.c	/^int console_add_cmd(const cmd_tbl_t *cmd)$/;"	f
+console_buffer	console.c	/^char console_buffer[CMD_CBSIZE];$/;"	v
+console_cmd_exec	console.c	/^void console_cmd_exec(void) {$/;"	f
+console_init	console.c	/^int console_init(void) {$/;"	f
+console_irq_handler	console.c	/^static void console_irq_handler(uint32_t id, int event) {$/;"	f	file:
+console_putc	console.c	/^static void console_putc(char c) {$/;"	f	file:
+console_puts	console.c	/^static void console_puts(const char *s) {$/;"	f	file:
+console_recv_ring_buffer	console.c	/^static unsigned char console_recv_ring_buffer[RING_BUFF_SIZE] = {0};$/;"	v	file:
+console_rxisr_Callback	console.c	/^static void console_rxisr_Callback(void) {$/;"	f	file:
+console_task	console.c	/^static void * console_task(const void *arg) {$/;"	f	file:
+delete_char	console.c	/^static char *delete_char(char *buffer, char *p, int *colp, int *np, int plen)$/;"	f	file:
+do_test1	console.c	/^void do_test1(int argc,char *argv[])$/;"	f
+do_test2	console.c	/^void do_test2(int argc,char *argv[])$/;"	f
+echo_flag	console.c	/^unsigned int echo_flag = 1;$/;"	v
+erase_seq	console.c	/^static char erase_seq[] = "\\b \\b";       \/* erase sequence         *\/$/;"	v	file:
+find_cmd	console.c	/^static cmd_tbl_t *find_cmd (const char *cmd)$/;"	f	file:
+g_cmd_list	console.c	/^static cmd_tbl_t g_cmd_list[CMD_LIST_COUNT] = {};$/;"	v	file:
+g_fifo	console.c	/^static struct kfifo g_fifo;$/;"	v	typeref:struct:kfifo	file:
+g_irq	serial.c	/^serial_irq g_irq = NULL;$/;"	v
+handle_char	console.c	/^int handle_char(const char c, char *prompt) {$/;"	f
+in	fifo.h	/^    unsigned int in;        $/;"	m	struct:kfifo
+kfifo	fifo.h	/^struct kfifo{$/;"	s
+kfifo_get	fifo.c	/^unsigned int kfifo_get(struct kfifo * fifo,unsigned char *buffer, unsigned int len)$/;"	f
+kfifo_init	fifo.c	/^unsigned int kfifo_init(struct kfifo *fifo, unsigned char *buffer, unsigned int size)$/;"	f
+kfifo_len	fifo.c	/^unsigned int kfifo_len(struct kfifo * fifo)$/;"	f
+kfifo_put	fifo.c	/^unsigned int kfifo_put(struct kfifo *fifo,unsigned char *buffer, unsigned int len)$/;"	f
+kfifo_reset	fifo.c	/^void kfifo_reset(struct kfifo *fifo)$/;"	f
+lastcommand	console.c	/^char lastcommand[CMD_CBSIZE] = { 0, };$/;"	v
+main	console.c	/^int main(){$/;"	f
+maxargs	console.h	/^    int     maxargs;                                   \/* maximum number of arguments *\/$/;"	m	struct:cmd_tbl_s
+min	fifo.c	4;"	d	file:
+mutex	fifo.c	/^static pthread_mutex_t mutex;$/;"	v	file:
+name	console.h	/^    char    *name;                                     \/* Command Name *\/$/;"	m	struct:cmd_tbl_s
+out	fifo.h	/^    unsigned int out;       $/;"	m	struct:kfifo
+parse_line	console.c	/^static int parse_line (char *line, char *argv[])$/;"	f	file:
+rd	serial.c	/^fd_set rd;$/;"	v
+run_command	console.c	/^static int run_command(char *cmd)$/;"	f	file:
+serial_close	serial.c	/^void serial_close(int fd)$/;"	f
+serial_fd	console.c	/^int serial_fd = -1;$/;"	v
+serial_getc	serial.c	/^unsigned char serial_getc(int fd){$/;"	f
+serial_irq	serial.c	/^typedef void (*serial_irq)(int,int);$/;"	t	file:
+serial_open	serial.c	/^int serial_open(const char* portname, int baudrate, char parity, char databit, char stopbit)$/;"	f
+serial_proc	serial.c	/^void * serial_proc(void * args)$/;"	f
+serial_putc	serial.c	/^void serial_putc(int fd,char ch)$/;"	f
+serial_readable	serial.c	/^int serial_readable(int fd){$/;"	f
+serial_receive	serial.c	/^int serial_receive(int fd,void *buf,int maxlen)$/;"	f
+serial_send	serial.c	/^int serial_send(int fd,const void *buf,int len)$/;"	f
+serial_setirq	serial.c	/^void serial_setirq(int fd,void (*irqhandler)(int,int)){$/;"	f
+show_cmd_usage	console.c	/^static void show_cmd_usage(const cmd_tbl_t *cmd)$/;"	f	file:
+size	fifo.h	/^    unsigned int size;      $/;"	m	struct:kfifo
+stdio_uart_inited	console.c	/^static stdio_uart_inited = 0;$/;"	v	file:
+tab_seq	console.c	/^static char tab_seq[] = "    ";        \/* used to expand TABs    *\/$/;"	v	file:
+usage	console.h	/^    char    *usage;                                    \/* Usage message(short)*\/$/;"	m	struct:cmd_tbl_s

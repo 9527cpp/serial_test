@@ -6,6 +6,7 @@ SRCS += ${wildcard *.c}
 OBJS := ${patsubst %.c, %.o, $(SRCS)}
 
 
+
 CFLAGS = -Wall -g -I.
 LDFLAGS = -lrt -lpthread
 TARGET := uart_rda
